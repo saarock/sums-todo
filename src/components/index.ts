@@ -9,7 +9,9 @@ import EditTaskComponent from "./EditTaskComponent/EditTaskComponent";
 import TaskHeader from "./TaskHeader/TaskHeader";
 import Button from "./Button/Button";
 import Input from "./Input/Input";
-
+import PendingTask from "./PendingTask/PendingTask";
+import CompletedTask from "./CompletedTask/CompletedTask";
+import TotalTask from "./TotalTask/TotalTask";
 
 // Exports
 export {
@@ -23,4 +25,7 @@ export {
   TaskHeader,
   Button,
   Input,
+  PendingTask,
+  CompletedTask,
+  TotalTask
 };
