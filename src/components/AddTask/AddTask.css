@@ -1,0 +1,190 @@
+/* AddTask Component Styles with Light/Dark Mode Support */
+
+.add-task-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.add-task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-normal);
+  outline: none;
+}
+
+.add-task-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.add-task-input:hover {
+  border-color: var(--border-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.add-task-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-task-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--text-inverse);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  min-height: 48px;
+}
+
+.add-task-button:hover {
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.add-task-button:active {
+  transform: translateY(0);
+}
+
+.add-task-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Dark mode adjustments */
+.dark .add-task-input {
+  background-color: var(--bg-card);
+  border-color: var(--border-primary);
+  color: var(--text-primary);
+}
+
+.dark .add-task-input::placeholder {
+  color: var(--text-muted);
+}
+
+.dark .add-task-input:hover {
+  border-color: var(--border-secondary);
+}
+
+.dark .add-task-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-task-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .add-task-input {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+
+  .add-task-button {
+    padding: 0.875rem 1.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-task-container {
+    margin-bottom: 1rem;
+  }
+
+  .add-task-input {
+    padding: 1rem;
+  }
+
+  .add-task-button {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .add-task-input,
+  .add-task-button {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .add-task-input,
+  .add-task-button {
+    transition: none;
+  }
+
+  .add-task-button:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .add-task-container {
+    display: none;
+  }
+}
+
+/* Focus within container */
+.add-task-container:focus-within .add-task-input {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading state */
+.add-task-button.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.add-task-button.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Error state */
+.add-task-input.error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.dark .add-task-input.error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
