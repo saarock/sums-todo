@@ -43,10 +43,6 @@ const AddTask = () => {
 
     // Add the task to global state
     addTask(newTask);
-
-    // Persist the task to localStorage for offline access
-    LocalStore.addTask(newTask);
-
     // Reset the input field after adding
     setTitle("");
   }, [title]);
