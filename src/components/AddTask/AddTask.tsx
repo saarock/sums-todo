@@ -3,7 +3,6 @@ import Button from "../Button/Button";
 import { useTaskFeatures } from "../../hooks";
 import { useCallback, useState } from "react";
 import { v4 } from "uuid";
-import LocalStore from "../../utils/localStore";
 import type { Task } from "../../types";
 import "./AddTask.css";
 
