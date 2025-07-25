@@ -7,6 +7,8 @@ import TaskTitle from "./TaskTitle/TaskTitle";
 import TaskStatus from "./TaskStatus/TaskStatus";
 import EditTaskComponent from "./EditTaskComponent/EditTaskComponent";
 import TaskHeader from "./TaskHeader/TaskHeader";
+import Button from "./Button/Button";
+import Input from "./Input/Input";
 
 
 // Exports
@@ -19,4 +21,6 @@ export {
   TaskStatus,
   EditTaskComponent,
   TaskHeader,
+  Button,
+  Input,
 };
