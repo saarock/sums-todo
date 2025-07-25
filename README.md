@@ -21,7 +21,7 @@ A Todo application built with **React**, **TypeScript**, and **Vite**, configure
 1. **Clone the repository and run:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/saarock/sums-todo
+   cd sums-todo
    npm install
    npm run dev
