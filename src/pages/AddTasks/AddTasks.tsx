@@ -8,12 +8,9 @@ const AddTasks = () => {
 
 const {completedCount,pendingCount, totalCount} = useStats();
 
-
-
-
-
   return (
     <div className="home-container">
+      
       <div className="home-content">
         {/* Hero Section */}
         <div className="home-hero">
