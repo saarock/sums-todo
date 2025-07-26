@@ -1,8 +1,9 @@
 import { Loading, Task, TaskHeader } from "../../components";
-import { useTaskFeatures } from "../../hooks";
+import { useLoadTaskFromLocalToState, useTaskFeatures } from "../../hooks";
 import useLoadTaskFromServer from "../../hooks/useLoadTaskFromServer";
 
 const Tasks = () => {
+    useLoadTaskFromLocalToState();
   // Load tasks from server using custom hook
   const { tasks, isLoading } = useLoadTaskFromServer();
 

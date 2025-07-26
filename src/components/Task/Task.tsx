@@ -3,7 +3,7 @@ import type React from "react";
 import type { TaskProps, Task as TaskType } from "../../types"; // TaskProps = props passed to Task component, TaskType = individual task object
 import { Trash2, Pencil, CheckCircle, CircleDashed } from "lucide-react"; // Icon components from lucide-react
 import Button from "../Button/Button";
-import { useLoadTaskFromLocalToState, useTaskFeatures } from "../../hooks"; // Custom hook to manage task logic
+import { useTaskFeatures } from "../../hooks"; // Custom hook to manage task logic
 import TaskTitle from "../TaskTitle/TaskTitle";
 import TaskStatus from "../TaskStatus/TaskStatus";
 import EditTaskComponent from "../EditTaskComponent/EditTaskComponent";
@@ -17,8 +17,6 @@ import "./Task.css";
  * Also allows inline editing through an EditTaskComponent modal.
  */
 const Task: React.FC<TaskProps> = ({ tasks, from }) => {
-
-  useLoadTaskFromLocalToState();
   
   // Destructure task utility functions from custom hook
   const { changeStatus, deleteTasks, editTaskF } = useTaskFeatures();
