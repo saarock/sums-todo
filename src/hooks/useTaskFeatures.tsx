@@ -23,12 +23,6 @@ const useTaskFeatures = () => {
   // Access the task list and current filter from the Redux store
   const { tasks, filter } = useSelector((state: RootState) => state.task);
 
-  // Load tasks from localStorage on initial mount and dispatch to store
-  useEffect(() => {
-    const cachedTasks = LocalStore.loadTasks();
-    [...cachedTasks].reverse().forEach((task) => dispatch(setTask(task)));
-  }, [dispatch]);
-
   /**
    * Add a new task to store and localStorage
    */

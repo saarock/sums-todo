@@ -9,6 +9,8 @@ const Tasks = () => {
   // Access locally managed and filtered tasks
   const { filteredTasks } = useTaskFeatures();
 
+
+
   // Show loading indicator while server tasks are being fetched
   if (isLoading) {
     return <Loading />;
