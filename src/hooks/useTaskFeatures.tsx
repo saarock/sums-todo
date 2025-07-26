@@ -100,6 +100,7 @@ const useTaskFeatures = () => {
       completed: boolean;
     }) => {
       dispatch(editTask({ id, title, completed }));
+      LocalStore.updateTask({completed,id,title});
     },
     [] // dispatch is stable, so not needed in dependency
   );
